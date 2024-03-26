@@ -6,6 +6,10 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 if __name__ == "__main__":
+    logger.info("Deleting Library...")
+    shutil.rmtree("./__lib__", ignore_errors=True)
+    logger.info("Successfully Deleted")
+
     logger.info("Copying library to the project")
     shutil.copytree("../tic-tac-toe-lib", "./__lib__", dirs_exist_ok=True)
     logger.info("Library copied successfully")
